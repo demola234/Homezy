@@ -9,25 +9,42 @@ environment:
   sdk: ">=2.18.6 <3.0.0"
 
 dependencies:
+  # Caches images from the internet
   cached_network_image: ^3.2.3
-  cloud_firestore: ^4.2.0
+  # For the cupertino icons
+  cupertino_icons: ^1.0.2
+  #  A Flutter curl-command generator for Dio.
   curl_logger_dio_interceptor: ^0.0.3
-  currency_text_input_formatter: ^2.1.8
+  # dartz is a functional programming library for Dart and Flutter. It provides a set of data types and functions to work with them.
   dartz: ^0.10.1
+  # A powerful HTTP client for Dart/Flutter, which supports global configuration, interceptors, 
+  # FormData, request cancellation, file uploading/downloading, timeout, and custom adapters etc
   dio: ^4.0.6
+  # Retry failed HTTP requests
   dio_smart_retry: ^1.3.2
+  # equatable is a package that allows you to easily implement value equality without having to explicitly override == and hashCode.
   equatable: null
+  #  file_picker is a Flutter plugin to let users pick files from the file system,
   file_picker: ^5.2.4
+  # firebase_core is a Flutter plugin to use the Firebase Core API.
   firebase_core: ^2.4.0
+  # firebase_crashlytics is a package that allows you to report Dart errors to Crashlytics.
   firebase_crashlytics: ^3.0.15
+  # firebase_messaging is a package that allows you to interact with the Firebase Cloud Messaging API and send push notifications.
+  firebase_messaging: ^14.1.4
+  #  A Flutter package to help you build beautiful, animated, and customizable charts and graphs.
   flutter:
     sdk: flutter
-  firebase_messaging: ^14.1.4
+  #  flutter_local_notifications is a Flutter plugin for Android and iOS to show notifications.
   flutter_local_notifications: ^13.0.0
+  #  flutter_localizations is a Flutter plugin that provides localizations for Flutter apps.
   flutter_localizations:
     sdk: flutter
+  #  flutter_native_splash is a Flutter plugin that allows you to easily create a native splash screen.
   flutter_native_splash: ^2.2.16
+  #  flutter_riverpod is a state management library for Flutter.
   flutter_riverpod: ^2.1.1
+  # flutter_svg is a Flutter package for drawing SVG pictures.
   flutter_svg: ^1.1.6
   fluttertoast: ^8.1.1
   get_it: ^7.2.0
@@ -37,15 +54,15 @@ dependencies:
   images_picker: ^1.2.11
   injectable: any
   internet_connection_checker: ^1.0.0+1
-  cupertino_icons: ^1.0.2
   intl: any
+  shared_preferences: ^2.0.18
 
 dev_dependencies:
   flutter_launcher_icons: ^0.12.0
-  flutter_test:
-    sdk: flutter
 
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 flutter_native_splash:
   color: "#FFFFFF"
@@ -58,9 +75,6 @@ flutter_native_splash:
 #   ios: true
 #   remove_alpha_ios: true
 #   image_path: "assets/images/homezy_logo.png"
-  
-
-
 flutter:
   uses-material-design: true
   generate: true
