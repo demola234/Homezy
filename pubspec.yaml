@@ -17,7 +17,7 @@ dependencies:
   curl_logger_dio_interceptor: ^0.0.3
   # dartz is a functional programming library for Dart and Flutter. It provides a set of data types and functions to work with them.
   dartz: ^0.10.1
-  # A powerful HTTP client for Dart/Flutter, which supports global configuration, interceptors, 
+  # A powerful HTTP client for Dart/Flutter, which supports global configuration, interceptors,
   # FormData, request cancellation, file uploading/downloading, timeout, and custom adapters etc
   dio: ^4.0.6
   # Retry failed HTTP requests
@@ -46,15 +46,25 @@ dependencies:
   flutter_riverpod: ^2.1.1
   # flutter_svg is a Flutter package for drawing SVG pictures.
   flutter_svg: ^1.1.6
+  # fluttertoast is a Flutter plugin to show toast.
   fluttertoast: ^8.1.1
+  #  get_it is a service locator that makes it easy to access services throughout your app.
   get_it: ^7.2.0
+  # get_storage is a Flutter plugin for persistent storage.
   get_storage: ^2.0.3
+  #  go_router is a Flutter package that allows you to easily manage your app's navigation.
   go_router: ^5.2.4
+  #  google_fonts is a Flutter package that allows you to easily use any of the 1,000+ fonts from fonts.google.com in your Flutter app.
   google_fonts: ^3.0.1
+  # images_picker is a Flutter plugin to pick images from the image library, and take new pictures with the camera.
   images_picker: ^1.2.11
+  # injectable is a code generation library for Dart and Flutter that makes it easy to use the dependency injection (DI) design pattern.
   injectable: any
+  # internet_connection_checker is a Flutter plugin to check the internet connection.
   internet_connection_checker: ^1.0.0+1
+  # intl
   intl: any
+  # shared_preferences is a Flutter plugin for reading and writing simple key-value pairs.
   shared_preferences: ^2.0.18
 
 dev_dependencies:
