@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "230860481840",
+    "project_id": "homezy-4838c",
+    "storage_bucket": "homezy-4838c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230860481840:android:8e8c821d4e29f85c8954f5",
+        "android_client_info": {
+          "package_name": "com.example.homezy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230860481840-30eten8jhdg5t5ubi0eqo05bfo72c7du.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTHVCUS7VglevNlkF9ivw5yNLXdYECzdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230860481840-30eten8jhdg5t5ubi0eqo05bfo72c7du.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
