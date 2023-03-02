@@ -11,9 +11,10 @@ class AppTheme {
     ThemeOptions.Light: ThemeData(
       brightness: Brightness.light,
       primarySwatch: Colors.blue,
-      primaryColor: Colors.blue,
+      primaryColor: Color(0xFF3062C8),
       accentColor: Colors.black54,
-      backgroundColor: Color(0xFFE6ECF0),
+      backgroundColor: Color(0xFFFFFFFF),
+      cardColor: Color(0xFFBABABA),
       scaffoldBackgroundColor: Colors.white,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     ),

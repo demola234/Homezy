@@ -8,10 +8,10 @@ Future<void> injector() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   sl
   
-  // STORAGE
+  //* STORAGE
     ..registerLazySingleton<AppCache>(
         () => AppCacheImpl(sharedPreferences: sl()))
 
-    // Shared Preferences
+  //* Shared Preferences
     ..registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 }

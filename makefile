@@ -76,3 +76,6 @@ purge: ## Purges the Flutter
 	@flutter clean
 	@flutter pub get
 
+flavor_build: ## Builds the app for the flavor
+	@echo "╠ Building the app for the flavor"
+	@flutter build ios --flavor development -t lib/main_development.dart

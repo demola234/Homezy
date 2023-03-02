@@ -22,7 +22,7 @@ class RouterNotifier extends ChangeNotifier {
         GoRoute(
           path: '/',
           name: RouteConstants.splash,
-          builder: (context, state) => const Onboard(),
+          builder: (context, state) => const OnboardingScreen(),
         ),
       ];
 }
