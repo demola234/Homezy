@@ -8,6 +8,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:homezy/core/global/themes/theme_notifier.dart';
+import 'package:homezy/core/global/themes/themes.dart';
 import 'package:homezy/core/routes/app_routers_part.dart';
 import 'package:homezy/core/services/push_notification/local_notification.dart';
 import 'package:homezy/core/services/push_notification/notification_service.dart';
@@ -77,15 +78,15 @@ class MyApp extends ConsumerWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
-
-
     //* Initialize go_router
     final router = ref.watch(goRoutesProvider);
-    final theme = ref.watch(themeNotifierProvider).themeData;
+    final theme = ref.watch(themeNotifierProvider);
 
     return MaterialApp.router(
-      theme: theme,
+      theme: theme.maybeWhen(
+        orElse: () => AppTheme.themeOptions[ThemeOptions.Dark],
+        theme: (theme) => theme,
+      ),
       debugShowCheckedModeBanner: false,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,

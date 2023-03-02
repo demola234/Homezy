@@ -16,10 +16,16 @@ class ThemeNotifier extends StateNotifier<ThemeState> {
     state = ThemeState.theme(themeData: AppTheme.themeOptions[theme]!);
   }
 
-  Future<ThemeData> getTheme() async {
-    final theme = await appCache.getThemeMode();
-    state = ThemeState.theme(themeData: AppTheme.themeOptions[theme]!);
-    return AppTheme.themeOptions[theme]!;
+  ThemeData getTheme() {
+    final themes = appCache.getThemeMode();
+    if (themes.isEmpty) {
+      state = ThemeState.theme(
+          themeData: AppTheme.themeOptions[ThemeOptions.Dark]!);
+      return AppTheme.themeOptions[ThemeOptions.Dark]!;
+    } else {
+      state = ThemeState.theme(themeData: AppTheme.themeOptions[themes]!);
+      return AppTheme.themeOptions[themes]!;
+    }
   }
 }
 

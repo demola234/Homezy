@@ -7,7 +7,7 @@ abstract class AppCache {
   Future<void> savePusNotificationToken(String value);
   Future<String> getPusNotificationToken();
   Future<void> saveThemeMode(String value);
-  Future<String> getThemeMode();
+  String getThemeMode();
 }
 
 class AppCacheImpl implements AppCache {
@@ -38,7 +38,7 @@ class AppCacheImpl implements AppCache {
   }
 
   @override
-  Future<String> getThemeMode() {
+   getThemeMode() async{
     try {
       final themeMode = box.read(AppCacheKey.themeMode);
       return Future.value(themeMode);
