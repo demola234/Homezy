@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:homezy/onboarding/widgets/image_list_view.dart';
+import 'package:homezy/features/onboarding/widgets/image_list_view.dart';
 
 class Onboard extends StatefulWidget {
   const Onboard({Key? key}) : super(key: key);
