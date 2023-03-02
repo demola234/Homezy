@@ -6,11 +6,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:homezy/core/global/themes/theme_notifier.dart';
 import 'package:homezy/core/routes/app_routers_part.dart';
 import 'package:homezy/core/services/push_notification/local_notification.dart';
 import 'package:homezy/core/services/push_notification/notification_service.dart';
 import 'package:homezy/firebase_options.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:homezy/locator.dart';
 
 //*  THIS handles the background notification
 Future<void> _backgroundNotificationHandler(RemoteMessage remoteMsg) async {
@@ -35,7 +38,7 @@ void main() async {
     );
     //* Initialize firebase messaging
     await FirebaseMessaging.instance.getInitialMessage();
-    //*  
+    //*
     FirebaseMessaging.onBackgroundMessage(_backgroundNotificationHandler);
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
@@ -60,27 +63,29 @@ void main() async {
 
     //* Force crash for testing
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+
+    //* Initialize DI : Dependency Injection
+    await injector();
+    await GetStorage.init();
+
+    //* Initialize Riverpod ProviderScope
     runApp(const ProviderScope(child: MyApp()));
   }, (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack));
 }
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
+
+
     //* Initialize go_router
     final router = ref.watch(goRoutesProvider);
+    final theme = ref.watch(themeNotifierProvider).themeData;
+
     return MaterialApp.router(
-      theme: ThemeData(
-        backgroundColor: Colors.white,
-        brightness: Brightness.light,
-        iconTheme: const IconThemeData(
-          color: Colors.grey,
-          size: 15,
-          opacity: 10,
-        ),
-      ),
+      theme: theme,
       debugShowCheckedModeBanner: false,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,

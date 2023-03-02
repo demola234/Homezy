@@ -1,6 +1,3 @@
-
-// ignore_for_file: unused_field
-
 part of 'app_routers_part.dart';
 
 final goRoutesProvider = Provider<GoRouter>((ref) {

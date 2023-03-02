@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:homezy/core/error/failure.dart';
+import 'package:homezy/core/global/error/failure.dart';
 import 'package:homezy/core/services/push_notification/local_notification.dart';
 // import 'package:homezy/core/services/push_notification/notification_failure.dart';
 

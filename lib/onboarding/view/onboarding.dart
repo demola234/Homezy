@@ -10,16 +10,15 @@ class Onboard extends StatefulWidget {
 }
 
 class _OnboardState extends State<Onboard> {
-
   @override
   void initState() {
     super.initState();
-     FlutterNativeSplash.remove();
+    FlutterNativeSplash.remove();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -58,25 +57,25 @@ class _OnboardState extends State<Onboard> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                       Text('Exclusive \nDigital \nCollectibles',
+                      Text('Exclusive \nDigital \nCollectibles',
                           style: TextStyle(
                               fontSize: 50,
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
-                       SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
-                       Text(
+                      Text(
                         'NFT has a value that can be called \nan asset that has a unique code.',
                         style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 40,
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 40,
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 150,
                       ),
                     ],
