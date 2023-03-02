@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:homezy/core/global/themes/theme_notifier.dart';
 import 'package:homezy/core/global/themes/themes.dart';
 import 'package:homezy/core/routes/app_routers_part.dart';
-import 'package:homezy/core/services/push_notification/local_notification.dart';
-import 'package:homezy/core/services/push_notification/notification_service.dart';
-import 'package:homezy/firebase_options.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
