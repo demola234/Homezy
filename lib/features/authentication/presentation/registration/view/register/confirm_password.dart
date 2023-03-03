@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homezy/core/global/constants/app_icons.dart';
 import 'package:homezy/core/global/constants/size.dart';
 import 'package:homezy/core/utils/input_validation.dart';
+import 'package:homezy/core/utils/loading_overlay.dart';
 import 'package:homezy/core/widgets/custom_text_form_field.dart';
 import 'package:homezy/core/widgets/home_button.dart';
 import 'package:homezy/features/authentication/presentation/login/widgets/app_header.dart';
@@ -18,7 +19,7 @@ class ConfirmPassword extends ConsumerStatefulWidget {
 }
 
 class _ConfirmPasswordState extends ConsumerState<ConfirmPassword>
-    with InputValidationMixin {
+    with LoadingOverlayMixin, InputValidationMixin {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
@@ -49,7 +50,7 @@ class _ConfirmPasswordState extends ConsumerState<ConfirmPassword>
                 ),
                 const VerticalMargin(5.0),
                 Text(
-                  '   Enter your password to confirm your account',
+                  'Enter your password to confirm your account',
                   style: Config.b3(context).copyWith(
                     color: Theme.of(context).cardColor,
                     fontSize: 14,

@@ -55,14 +55,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               itemBuilder: (_, index) {
                 return Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Text(
-                        onboarding[index].text,
-                        style: Config.h1(context).copyWith(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 37,
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Text(
+                          onboarding[index].text,
+                          style: Config.h1(context).copyWith(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 37,
+                          ),
                         ),
                       ),
                     ),

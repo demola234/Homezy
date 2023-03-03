@@ -58,6 +58,7 @@ dependencies:
   google_fonts: ^3.0.1
   # images_picker is a Flutter plugin to pick images from the image library, and take new pictures with the camera.
   images_picker: ^1.2.11
+  loading_animation_widget: ^1.1.0+5
   # injectable is a code generation library for Dart and Flutter that makes it easy to use the dependency injection (DI) design pattern.
   injectable: any
   # internet_connection_checker is a Flutter plugin to check the internet connection.

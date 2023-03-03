@@ -5,6 +5,7 @@ import 'package:homezy/core/global/constants/app_icons.dart';
 import 'package:homezy/core/global/constants/app_images.dart';
 import 'package:homezy/core/global/constants/size.dart';
 import 'package:homezy/core/routes/routes_constants.dart';
+import 'package:homezy/core/utils/loading_overlay.dart';
 import 'package:homezy/core/widgets/social_buttons.dart';
 import 'package:homezy/features/authentication/presentation/registration/widget/bottom_texts.dart';
 import 'package:homezy/features/authentication/presentation/registration/widget/check_teams_and_condition.dart';
@@ -18,7 +19,9 @@ class WelcomeScreen extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
+class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
+    with LoadingOverlayMixin {
+  OverlayEntry? _overlayEntry;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -26,8 +29,8 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child:Align(
-            alignment: Alignment.topCenter, 
+          child: Align(
+            alignment: Alignment.topCenter,
             child: Column(
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -103,6 +106,10 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                   text: 'Continue with Google',
                   textColor: Theme.of(context).textTheme.headline2!.color!,
                   onTap: () async {
+                    _overlayEntry = showLoadingOverlay(context, _overlayEntry);
+                    await Future.delayed(const Duration(seconds: 2), () {
+                      _overlayEntry?.remove();
+                    });
                     // final token = await GoogleAuthHandler.signInWithGoogle();
                     // // await GoogleAuthHandler.signOutGoogle();
                     // print(token);
@@ -116,6 +123,10 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen> {
                   text: 'Continue with Facebook',
                   textColor: Theme.of(context).textTheme.headline1!.color!,
                   onTap: () async {
+                    _overlayEntry = showLoadingOverlay(context, _overlayEntry);
+                    await Future.delayed(const Duration(seconds: 2), () {
+                      _overlayEntry?.remove();
+                    });
                     // final token = await FbAuthHandler.login();
                     // print(token);
                   },
