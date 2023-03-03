@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:go_router/go_router.dart';
+import 'package:homezy/core/cache/app_cache.dart';
 import 'package:homezy/core/global/constants/size.dart';
 import 'package:homezy/core/global/model/onboarding_model.dart';
+import 'package:homezy/core/routes/routes_constants.dart';
 import 'package:homezy/features/onboarding/widgets/onboarding_background.dart';
+import 'package:homezy/locator.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -13,13 +16,13 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int currentIndex = 0;
+  final cache = sl<AppCache>();
 
   late PageController _pageController;
 
   @override
   void initState() {
     _pageController = PageController();
-    FlutterNativeSplash.remove();
     super.initState();
   }
 
@@ -52,21 +55,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               itemBuilder: (_, index) {
                 return Column(
                   children: [
-                    // VerticalMargin(context.screenHeight() / 3.8),
-                    // OnboardingScreeningText(index: index),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Row(
-                        children: [
-                          Text(
-                            onboarding[index].text,
-                            style: Config.h1(context).copyWith(
-                              color: Theme.of(context).primaryColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 37,
-                            ),
-                          ),
-                        ],
+                      child: Text(
+                        onboarding[index].text,
+                        style: Config.h1(context).copyWith(
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 37,
+                        ),
                       ),
                     ),
                     const VerticalMargin(40),
@@ -123,6 +120,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onTap: () {
                     if (currentIndex != 2) {
                       _skipToLastPage();
+                    } else {
+                      context.pushNamed(RouteConstants.welcome);
+                      cache.saveOnboarding(true);
                     }
                   },
                   child: Container(

@@ -11,9 +11,11 @@ class RouteErrorScreen extends StatefulWidget {
 class _RouteErrorScreenState extends State<RouteErrorScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Column(
-        children:  [
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
           Center(
             child: Text(widget.errMsg),
           ),
