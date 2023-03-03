@@ -1,5 +1,8 @@
 class RouteConstants {
-  static String splash = 'splash';
-  static String user = '/user';
-  static String onboarding = '/onboarding';
+  static String onboarding = 'onboarding';
+  static String welcome = 'welcome';
+  static String login = 'login';
+  static String register = 'register';
+  static String verifyEmail = 'verifyEmail';
+  static String confirmPassword = 'confirmPassword';
 }
