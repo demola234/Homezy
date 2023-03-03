@@ -4,4 +4,5 @@ class RouteConstants {
   static String login = 'login';
   static String register = 'register';
   static String verifyEmail = 'verifyEmail';
+  static String confirmPassword = 'confirmPassword';
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homezy/core/global/constants/app_icons.dart';
 import 'package:homezy/core/global/constants/size.dart';
+import 'package:homezy/core/routes/routes_constants.dart';
 import 'package:homezy/core/widgets/home_button.dart';
 import 'package:homezy/features/authentication/presentation/login/widgets/app_header.dart';
 import 'package:pinput/pinput.dart';
@@ -157,7 +159,14 @@ class _VerifyEmailOtpState extends ConsumerState<VerifyEmailOtp> {
                 child: HomezyButton(
                     buttonText: 'Verify OTP',
                     buttonColor: Theme.of(context).primaryColor,
-                    onPressed: () {}),
+                    onPressed: () {
+                      context.pushNamed(
+                        RouteConstants.confirmPassword,
+                        queryParams: <String, dynamic>{
+                          'email': widget.email,
+                        },
+                      );
+                    }),
               ),
             ]))));
   }

@@ -10,4 +10,6 @@ class AppIcons {
   static String camera = '${baseAssetUrl}camera.svg';
   static String gallery = '${baseAssetUrl}gallary.svg';
   static String check = '${baseAssetUrl}check.svg';
+  static String faceId = '${baseAssetUrl}faceId.svg';
+  static String fingerprint = '${baseAssetUrl}fingerprint.svg';
 }

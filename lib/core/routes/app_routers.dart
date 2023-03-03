@@ -42,7 +42,7 @@ class RouterNotifier extends ChangeNotifier {
                     pageBuilder: (context, state) {
                       return CustomTransitionPage(
                         key: state.pageKey,
-                        child: const LoginScreen(),
+                        child: const LoginBiometrics(),
                         transitionsBuilder:
                             (context, animation, secondaryAnimation, child) {
                           // Change the opacity of the screen using a Curve based on the the animation's
@@ -72,6 +72,13 @@ class RouterNotifier extends ChangeNotifier {
                   email: state.queryParams['email']!,
                   key: state.pageKey,
                 ),
+              ),
+              GoRoute(path: 'confirmPassword',
+                  name: RouteConstants.confirmPassword,
+                  builder: (context, state) => ConfirmPassword(
+                    email: state.queryParams['email']!,
+                  key: state.pageKey,
+                  ),
               )
             ]),
       ];
