@@ -52,9 +52,12 @@ dependencies:
   get_it: ^7.2.0
   # get_storage is a Flutter plugin for persistent storage.
   get_storage: ^2.0.3
+  flutter_facebook_auth: ^5.0.7
   #  go_router is a Flutter package that allows you to easily manage your app's navigation.
   go_router: ^6.2.0
   #  google_fonts is a Flutter package that allows you to easily use any of the 1,000+ fonts from fonts.google.com in your Flutter app.
+  google_sign_in: ^6.0.2
+  # google_sign_in is a Flutter plugin for Google Sign-In.
   google_fonts: ^3.0.1
   # images_picker is a Flutter plugin to pick images from the image library, and take new pictures with the camera.
   images_picker: ^1.2.11

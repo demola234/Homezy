@@ -5,6 +5,8 @@ import 'package:homezy/core/global/constants/app_icons.dart';
 import 'package:homezy/core/global/constants/app_images.dart';
 import 'package:homezy/core/global/constants/size.dart';
 import 'package:homezy/core/routes/routes_constants.dart';
+import 'package:homezy/core/services/oauth/facebook_auth.dart';
+import 'package:homezy/core/services/oauth/google_sign_in.dart';
 import 'package:homezy/core/utils/loading_overlay.dart';
 import 'package:homezy/core/widgets/social_buttons.dart';
 import 'package:homezy/features/authentication/presentation/registration/widget/bottom_texts.dart';
@@ -110,9 +112,9 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
                     await Future.delayed(const Duration(seconds: 2), () {
                       _overlayEntry?.remove();
                     });
-                    // final token = await GoogleAuthHandler.signInWithGoogle();
-                    // // await GoogleAuthHandler.signOutGoogle();
-                    // print(token);
+                    final token = await GoogleAuthHandler.signInWithGoogle();
+                    // await GoogleAuthHandler.signOutGoogle();
+                    debugPrint(token.toString());
                   },
                   borderColor: Theme.of(context).cardColor,
                 ),
@@ -127,8 +129,8 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
                     await Future.delayed(const Duration(seconds: 2), () {
                       _overlayEntry?.remove();
                     });
-                    // final token = await FbAuthHandler.login();
-                    // print(token);
+                    final token = await FbAuthHandler.login();
+                    print(token);
                   },
                   borderColor: Colors.transparent,
                 ),
